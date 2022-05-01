@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Eid | Hemmat</title>
+  <style type="text/css" media="all">
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial;
+      outline: none;
+      border: none;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url(https://dl.dropbox.com/s/vw2xnh3817uq6q9/eid.gif?dl=0);
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      backdrop-filter: blur(3px);
+    }
+    .box{
+      position: relative;
+      width: 90%;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box .btn{
+      display: flex;
+      border-radius: 30px;
+      justify-content: center;
+      position: absolute;
+      content: '';
+      left: 50%;
+      bottom: 0%;
+      transform: translate(-50%,30%);
+      z-index: 3;
+    }
+    .box .btn button{
+      width: 50px;
+      height: 40px;
+      background: #f22178;
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+    .box .btn .btn1{
+      text-align: right;
+      border-radius: 30px 0 0 30px;
+      transform-origin: right;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+    }
+    .box .btn .btn2{
+      text-align: left;
+      border-radius: 0 30px 30px 0;
+      box-shadow:3px 3px 5px rgba(0,0,0,0.2);
+      transform-origin: left;
+    }
+    .btn .btn1.act{
+      transform: rotate(46deg) translateX(20px);
+      text-align: left;
+      padding-left: 15px;
+      font-size: 15px;
+      background: red;
+      width: 80px;
+    }
+    .btn .btn2.act{
+      transform: rotate(315deg) translateX(-20px);
+      text-align: center;
+      font-size: 15px;
+      background: red;
+      width: 80px;
+    }
+    .mesg{
+      position: fixed;
+      top: 120%;
+      left: 50%;
+      transform: translate(-50%,0);
+      width: 300px;
+      opacity: 0;
+      border-radius: 10px;
+      padding: 30px 20px;
+      padding-bottom: 20px;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(140deg,#000,red,green);
+      transition: 0.3s ease;
+      z-index: 1;
+    }
+    .mesg.up{
+      top: 3%;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="btn">
+      <button class="btn1">Cl</button>
+      <button class="btn2">ick</button>
+    </div>
+  </div>
+  <div class="mesg">
+    <h2>Happy Eid 💖</h2>
+    <br />
+    <p>سربلندی ابراهیم, آرامش اسماعیل امیدواری هاجر, عطر عرفه و برکت عید قربان را برای شما آرزومندم. آمیدوارم امروز غم های تان قربانی شادی های تان گردد.         
+    </p>
+	<p>عید سعید اضحی را برای شما و از طریق شما به تمام عزیزان تان مبارک باد</p>
+    <br />
+    <p>
+      Hello dear friend, Happy Eid. I hope you have a good and happy day, spend three days of Eid well and enjoy.
+    </p>
+    <br />
+    <p style="color:#333;text-align:left">Hussain Hemmat</p>
+  </div>
+  
+  <audio loop style="display:none" id="audio">
+    <source src="https://dl.dropbox.com/s/lqc1iugik58d3er/eid.mp3?dl=0" type="audio/ogg" />
+  </audio>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  var audio = document.getElementById("audio");
+  var n = 1;
+    $(".btn").click(()=>{
+      if(n == 1){
+        n = 0
+      audio.play();
+      $(".btn1").html("Eid");
+      $(".btn1").addClass("act");
+      $(".btn2").html("Mubarak");
+      $(".btn2").addClass("act");
+      $(".mesg").addClass("up");
+      }
+      else{
+        n = 1
+      audio.pause();
+      $(".btn1").html("Cl");
+      $(".btn1").removeClass("act");
+      $(".btn2").html("ick");
+      $(".btn2").removeClass("act");
+      $(".mesg").removeClass("up")
+      }
+    })
+  </script>
+</body>
+</html>
